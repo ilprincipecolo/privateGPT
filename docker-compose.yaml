@@ -1,0 +1,23 @@
+version: '3'
+services:
+  frontend:
+    build:
+      context: ./client
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - embedai-network
+
+  backend:
+    build:
+      context: ./server
+    ports:
+      - "5000:5000"
+    networks:
+      - embedai-network
+
+networks:
+  embedai-network:
+    driver: bridge
