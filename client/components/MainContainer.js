@@ -3,6 +3,7 @@ import React, { useState, useRef } from "react";
 import { FormControl, Stack, Spinner } from "react-bootstrap";
 import Image from "next/image";
 import { ToastContainer, toast } from "react-toastify";
+import { BASE_URL } from "@utils/enum";
 
 export default function MainContainer() {
   const [chat, setChat] = useState([]);
@@ -52,6 +53,7 @@ export default function MainContainer() {
           setLoading(false);
         }
       } catch (error) {
+        console.log(error);
         toast.error("Error Fetching Answer. Please try again.");
         setLoading(false);
       }
