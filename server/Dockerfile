@@ -24,6 +24,13 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copia il codice dell'app
 COPY . .
 
+# Aggiungi ENV per il modello
+ENV PERSIST_DIRECTORY=/db
+ENV MODEL_TYPE=gpt4All
+ENV MODEL_PATH=model/ggml-gpt4all-j-v1.3-groovy.bin
+ENV EMBEDDINGS_MODEL_NAME=all-MiniLM-L6-v2
+ENV MODEL_N_CTX=1000
+
 # Espone la porta del backend (ad esempio 5000)
 EXPOSE 5000
 
