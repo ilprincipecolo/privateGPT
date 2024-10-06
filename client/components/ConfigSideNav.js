@@ -1,4 +1,5 @@
 "use client";
+import { BASE_URL } from "@utils/enum";
 import React, { useState } from "react";
 import { Button, Stack, Form, Spinner } from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
@@ -12,7 +13,7 @@ export default function ConfigSideNav() {
   const ingestData = async () => {
     try {
       setIsLoading(true);
-      const res = await fetch("http://localhost:5000/api/ingest");
+      const res = await fetch(`${BASE_URL}/ingest`);
       const jsonData = await res.json();
       if (!res.ok) {
         // This will activate the closest `error.js` Error Boundary
@@ -33,7 +34,7 @@ export default function ConfigSideNav() {
   const handleDownloadModel = async () => {
     try {
       setdownloadInProgress(true);
-      const res = await fetch("http://localhost:5000/api/download_model");
+      const res = await fetch(`${BASE_URL}/download_model`);
       const jsonData = await res.json();
       if (!res.ok) {
         response.text().then((text) => {
@@ -64,7 +65,7 @@ export default function ConfigSideNav() {
       const formData = new FormData();
       formData.append("document", selectedFile);
 
-      const res = await fetch("http://localhost:5000/api/upload_doc", {
+      const res = await fetch(`${BASE_URL}/upload_doc`, {
         method: "POST",
         body: formData,
       });

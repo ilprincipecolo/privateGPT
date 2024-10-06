@@ -26,7 +26,7 @@ export default function MainContainer() {
       setChat((chat) => [...chat, { isBot: false, msg: question }]);
       setQuestion("");
       try {
-        const response = await fetch("http://localhost:5000/api/get_answer", {
+        const response = await fetch(`${BASE_URL}/get_answer`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

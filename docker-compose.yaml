@@ -4,7 +4,7 @@ services:
     build:
       context: ./client  # Assumendo che il Dockerfile sia nella cartella client
     ports:
-      - "80:80"  # La porta 80 pubblica è mappata alla porta 80 di NGINX
+      - "80:3000"  # La porta 80 pubblica è mappata alla porta 80 di NGINX
     depends_on:
       - backend
     networks:
