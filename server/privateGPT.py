@@ -43,6 +43,9 @@ model_type = os.environ.get('MODEL_TYPE')
 model_path = os.environ.get('MODEL_PATH')
 model_n_ctx = os.environ.get('MODEL_N_CTX')
 
+# Print current working directory
+print(f"Current working directory: {os.getcwd()}")
+
 # Print ENV variables
 print(f"EMBEDDINGS_MODEL_NAME: {embeddings_model_name}")
 print(f"MODEL_TYPE: {model_type}")
@@ -51,13 +54,13 @@ print(f"MODEL_N_CTX: {model_n_ctx}")
 print(f"PERSIST_DIRECTORY: {persist_directory}")
 
 # Verify folders exist of the model and persist directory
-if not os.path.exists(persist_directory):
-    os.makedirs(persist_directory)
-    print(f"Created persist directory: {persist_directory}")
+# if not os.path.exists(persist_directory):
+#     os.makedirs(persist_directory)
+#     print(f"Created persist directory: {persist_directory}")
 
-if not os.path.exists(model_path):
-    os.makedirs(model_path)
-    print(f"Created model directory: {model_path}")
+# if not os.path.exists(model_path):
+#     os.makedirs(model_path)
+#     print(f"Created model directory: {model_path}")
 
 llm = None
 
