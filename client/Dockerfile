@@ -1,5 +1,5 @@
 # Fase 1: Build dell'applicazione Next.js
-FROM node:16 AS builder
+FROM node:19 AS builder
 
 # Imposta la directory di lavoro
 WORKDIR /app
