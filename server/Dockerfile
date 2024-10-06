@@ -25,9 +25,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Aggiungi ENV per il modello
-ENV PERSIST_DIRECTORY=/db
-ENV MODEL_TYPE=gpt4All
-ENV MODEL_PATH=model/ggml-gpt4all-j-v1.3-groovy.bin
+ENV PERSIST_DIRECTORY=db
+ENV MODEL_TYPE=GPT4All
+ENV MODEL_PATH=models/ggml-gpt4all-j-v1.3-groovy.bin
 ENV EMBEDDINGS_MODEL_NAME=all-MiniLM-L6-v2
 ENV MODEL_N_CTX=1000
 
